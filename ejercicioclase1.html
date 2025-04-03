@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jelou</title>
+</head>
+
+<body>
+    <div>
+        <h1>Hola diseño web</h1>
+    </div>
+    <table style="border: 1px solid">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Juan</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Carlos</td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input></td>
+                <td><input></td>
+                <td><button onclick="add()">ADD</button></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script>
+   // alert('Hola mundo')
+    window.onload = () => {
+        document.getElementsByTagName('input')[0].focus()
+    }
+
+    function add() {
+
+        var tbody = document.getElementsByTagName('tbody')[0]
+        var row = tbody.insertRow()
+        var cell = row.insertCell()
+        cell.innerHTML = document.getElementByTagName('input')[0].value
+        cell = row.insertCell()
+        cell.innerHTML = document.getElementByTagName('input')[1].value
+        cell = row.insertCell()
+
+        clear()
+    }
+
+    function clear() {
+        document.getElementByTagName('input')[0].value = ''
+        document.getElementByTagName('input')[1].value = ''
+
+        document.getElementsByTagName('input')[0].focus()
+    }
+</script>
+
+</html>
